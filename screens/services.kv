@@ -1,51 +1,44 @@
 <ServicesScreen>:
+    canvas.before:
+        Color:
+            rgba: app.styles.WHITE
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
     BoxLayout:
         orientation: 'vertical'
 
-        Label:
+        TitleLabel:
             text: 'Наши услуги'
-            font_size: '24sp'
             size_hint_y: 0.1
 
         ScrollView:
             GridLayout:
                 cols: 1
-                spacing: 20
+                spacing: 15
+                padding: 20
                 size_hint_y: None
                 height: self.minimum_height
 
                 BoxLayout:
                     size_hint_y: None
                     height: 60
-                    Label:
+                    canvas.before:
+                        Color:
+                            rgba: app.styles.LIGHT_PURPLE
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                    BodyLabel:
                         text: 'Стрижка'
-                        font_size: '18sp'
-                    Label:
+
+                    BodyLabel:
                         text: '1500 руб'
-                        font_size: '18sp'
 
-                BoxLayout:
-                    size_hint_y: None
-                    height: 60
-                    Label:
-                        text: 'Окрашивание'
-                        font_size: '18sp'
-                    Label:
-                        text: '3000 руб'
-                        font_size: '18sp'
-
-                BoxLayout:
-                    size_hint_y: None
-                    height: 60
-                    Label:
-                        text: 'Маникюр'
-                        font_size: '18sp'
-                    Label:
-                        text: '2000 руб'
-                        font_size: '18sp'
-
-        Button:
+        ColoredButton:
             text: 'Назад'
-            size_hint: 0.5, 0.1
+            size_hint: 0.6, None
             pos_hint: {'center_x': 0.5}
             on_press: root.manager.current = 'home'

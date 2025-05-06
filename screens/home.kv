@@ -1,21 +1,27 @@
 <HomeScreen>:
+    canvas.before:
+        Color:
+            rgba: app.styles.WHITE
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
     BoxLayout:
         orientation: 'vertical'
         padding: 20
         spacing: 20
 
-        Label:
+        TitleLabel:
             text: 'VogueStyle'
-            font_size: '24sp'
             size_hint_y: 0.3
 
-        Label:
+        BodyLabel:
             text: 'Насладись каждым мгновением с нами!'
-            font_size: '16sp'
             size_hint_y: 0.2
 
-        Button:
+        ColoredButton:
             text: 'Наши услуги'
-            size_hint: 0.8, 0.2
+            size_hint: 0.8, None
+            height: app.styles.BUTTON_HEIGHT
             pos_hint: {'center_x': 0.5}
             on_press: root.manager.current = 'services'

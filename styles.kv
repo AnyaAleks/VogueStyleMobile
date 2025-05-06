@@ -1,0 +1,23 @@
+# Общие стили для всех виджетов
+<ColoredButton@Button>:
+    background_normal: ''
+    background_color: app.styles.PRIMARY
+    color: app.styles.WHITE
+    font_size: '16sp'
+    size_hint_y: None
+    height: app.styles.BUTTON_HEIGHT
+    canvas.after:
+        Color:
+            rgba: app.styles.WHITE if self.state == 'normal' else app.styles.LIGHT_PURPLE
+        Line:
+            width: 1
+            rectangle: (self.x, self.y, self.width, self.height)
+
+<TitleLabel@Label>:
+    color: app.styles.PRIMARY
+    font_size: app.styles.TITLE_SIZE
+    bold: True
+
+<BodyLabel@Label>:
+    color: app.styles.DARK_TEXT
+    font_size: app.styles.SUBTITLE_SIZE

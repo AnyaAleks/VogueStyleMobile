@@ -1,44 +1,38 @@
 <MasterScreen>:
+    canvas.before:
+        Color:
+            rgba: app.styles.WHITE
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
     BoxLayout:
         orientation: 'vertical'
-        padding: 20
+        padding: 30
         spacing: 20
 
-        Label:
+        TitleLabel:
             text: 'Личный кабинет'
-            font_size: '24sp'
             size_hint_y: 0.1
 
         BoxLayout:
             orientation: 'horizontal'
             size_hint_y: None
-            height: 40
-            Label:
+            height: 50
+            padding: [0, 10]
+
+            BodyLabel:
                 text: 'ФИО:'
-                font_size: '16sp'
-                size_hint_x: 0.4
+                size_hint_x: 0.3
                 halign: 'right'
-            Label:
+
+            BodyLabel:
                 text: 'Иванова Мария Петровна'
-                font_size: '16sp'
-                size_hint_x: 0.6
+                color: app.styles.PRIMARY
+                size_hint_x: 0.7
 
-        BoxLayout:
-            orientation: 'horizontal'
-            size_hint_y: None
-            height: 40
-            Label:
-                text: 'Специализация:'
-                font_size: '16sp'
-                size_hint_x: 0.4
-                halign: 'right'
-            Label:
-                text: 'Парикмахер-стилист'
-                font_size: '16sp'
-                size_hint_x: 0.6
-
-        Button:
+        ColoredButton:
             text: 'Назад'
-            size_hint: 0.5, 0.1
+            size_hint: 0.6, None
             pos_hint: {'center_x': 0.5}
             on_press: root.manager.current = 'home'
