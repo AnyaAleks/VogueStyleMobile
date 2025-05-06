@@ -1,0 +1,44 @@
+<MasterScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 20
+
+        Label:
+            text: 'Личный кабинет'
+            font_size: '24sp'
+            size_hint_y: 0.1
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'ФИО:'
+                font_size: '16sp'
+                size_hint_x: 0.4
+                halign: 'right'
+            Label:
+                text: 'Иванова Мария Петровна'
+                font_size: '16sp'
+                size_hint_x: 0.6
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Специализация:'
+                font_size: '16sp'
+                size_hint_x: 0.4
+                halign: 'right'
+            Label:
+                text: 'Парикмахер-стилист'
+                font_size: '16sp'
+                size_hint_x: 0.6
+
+        Button:
+            text: 'Назад'
+            size_hint: 0.5, 0.1
+            pos_hint: {'center_x': 0.5}
+            on_press: root.manager.current = 'home'

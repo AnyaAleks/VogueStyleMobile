@@ -1,0 +1,20 @@
+<ErrorScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 20
+
+        Label:
+            text: 'Ошибка соединения'
+            font_size: '24sp'
+            color: 1, 0, 0, 1  # Красный цвет
+
+        Label:
+            text: 'Попробуйте позже'
+            font_size: '18sp'
+
+        Button:
+            text: 'На главную'
+            size_hint: 0.6, 0.15
+            pos_hint: {'center_x': 0.5}
+            on_press: root.manager.current = 'home'
