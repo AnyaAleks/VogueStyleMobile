@@ -1,0 +1,36 @@
+<HomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Добро пожаловать в наш салон красоты!'
+            font_size: '24sp'
+        Button:
+            text: 'Услуги'
+            on_press: root.manager.current = 'services'
+        Button:
+            text: 'О салоне'
+            on_press: root.manager.current = 'about'
+
+<ServicesScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Наши услуги:'
+            font_size: '24sp'
+        Label:
+            text: '1. Стрижка\n2. Укладка\n3. Маникюр\n4. Педикюр\n5. Массаж'
+        Button:
+            text: 'Назад'
+            on_press: root.manager.current = 'home'
+
+<AboutScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'О нашем салоне:'
+            font_size: '24sp'
+        Label:
+            text: 'Мы предлагаем лучшие услуги по уходу за собой.'
+        Button:
+            text: 'Назад'
+            on_press: root.manager.current = 'home'
