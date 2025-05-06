@@ -4,6 +4,8 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from styles import AppStyles
 
+from kivy.core.window import Window
+Window.size = (360, 640)
 
 # Объявляем классы экранов
 class HomeScreen(Screen):
