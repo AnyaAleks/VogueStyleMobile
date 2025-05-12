@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07d85e7b-470e-4c01-a056-d00b5d796a0c" name="Changes" comment="*\\Новая верстка для home.kv">
-      <change afterPath="$PROJECT_DIR$/assets/images/background_blueWater.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screens/splashScreen.kv" afterDir="false" />
+    <list default="true" id="07d85e7b-470e-4c01-a056-d00b5d796a0c" name="Changes" comment="SplashScreen - черновик">
+      <change afterPath="$PROJECT_DIR$/assets/images/man.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/home.kv" beforeDir="false" afterPath="$PROJECT_DIR$/screens/home.kv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.kv" beforeDir="false" afterPath="$PROJECT_DIR$/styles.kv" afterDir="false" />
     </list>
@@ -55,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/anya/PycharmProjects/VogueStyleMobile/assets/images"
+    "last_opened_file_path": "/home/anya/PycharmProjects/VogueStyleWebsite"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -138,13 +136,22 @@
       <option name="project" value="LOCAL" />
       <updated>1747046101181</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="SplashScreen - черновик">
+      <option name="closed" value="true" />
+      <created>1747057626402</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747057626402</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Итоговый вариант файлов" />
     <MESSAGE value="*" />
     <MESSAGE value="*\\Новая верстка для home.kv" />
-    <option name="LAST_COMMIT_MESSAGE" value="*\\Новая верстка для home.kv" />
+    <MESSAGE value="SplashScreen - черновик" />
+    <option name="LAST_COMMIT_MESSAGE" value="SplashScreen - черновик" />
   </component>
 </project>

@@ -26,11 +26,12 @@
 
         # Карточка салона
         SalonCard:
-            #size_hint_y: 0.3
-            size_hint_y: None  # Установите size_hint_y в None
+            size_hint_y: 0.9
+            #size_hint_y: None  # Установите size_hint_y в None
             height: self.parent.height * 0.3
             width: self.parent.width
             size_hint_x: 1
+            padding: [0, 20, 0, 0]
 
             # Выпадающий список
             Spinner:
@@ -49,20 +50,24 @@
                 padding: [0, 20, 0, 0]
                 size_hint_y: 0.4
 
-                ActionButton:
+                ActionButtonList:
                     text: 'Выбрать специалиста'
-                    icon: 'assets/icons/master.png'  # Укажите путь к изображению
+                    #icon: 'assets/images/man.png'  # Укажите путь к изображению
                     on_press: root.manager.current = 'master'
 
-                ActionButton:
+                ActionButtonList:
                     text: 'Выбрать дату и время'
-                    icon: 'assets/icons/calendar.png'  # Укажите путь к изображению
+                    icon: 'assets/images/man.png'  # Укажите путь к изображению
                     on_press: root.manager.current = 'date_time'
 
-                ActionButton:
-                    text: 'Выбрать услуги'
-                    icon: 'assets/icons/services.png'  # Укажите путь к изображению
+                ActionButtonList:
+                    text: 'Выбрать услуги'  # Задаем текст только здесь
+                    icon: 'assets/images/man.png'  # Укажите путь к изображению
                     on_press: root.manager.current = 'services'
+
+            FooterLabel:
+                text: 'VogueStyle 💜 All rights reserved. GUAP'
+                size_hint_y: 0.1
 
 
 
