@@ -1,6 +1,7 @@
 from kivy.app import App
 from kivy.core.text import Label
 from kivy.factory import Factory
+from kivy.graphics import Color, Rectangle
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -54,9 +55,38 @@ class HomeScreen(Screen):
             card.salon_address = details['address']
             self.ids.details_container.add_widget(card)
 
+class ServiceItem(BoxLayout):
+    service_name = StringProperty()
+    service_price = StringProperty()
 
 class ServicesScreen(Screen):
-    pass
+    def on_enter(self):
+        # Данные услуг
+        services = [
+            {
+                "name": "Стрижка",
+                "price": "1500 руб"
+            },
+            {
+                "name": "Укладка",
+                "price": "2000 руб"
+            },
+            {
+                "name": "Окрашивание",
+                "price": "3000 руб"
+            }
+        ]
+
+        # Очистка GridLayout перед добавлением новых элементов
+        self.ids.services_grid.clear_widgets()
+
+        # Добавление услуг в GridLayout
+        for service in services:
+            service_item = Factory.ServiceItem()
+            service_item.service_name = service['name']
+            service_item.service_price = service['price']
+            self.ids.services_grid.add_widget(service_item)
+
 
 
 class MasterScreen(Screen):
