@@ -1,27 +1,86 @@
+# screens/home.kv
 <HomeScreen>:
-    canvas.before:
-        Color:
-            rgba: app.styles.WHITE
-        Rectangle:
-            pos: self.pos
-            size: self.size
+    AsyncImage:
+        source: 'https://ania.cleverlive.pro/VogueStyle_application/background_drops.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        size: root.size
+        pos: root.pos
 
     BoxLayout:
         orientation: 'vertical'
-        padding: 20
+        padding: [20, 40, 20, 20]
         spacing: 20
 
-        TitleLabel:
-            text: 'VogueStyle'
-            size_hint_y: 0.3
+        # Заголовок
+        BoxLayout:
+            size_hint_y: 0.15
+            orientation: 'vertical'
+            spacing: 5
+            TitleLabel:
+                text: 'VOGUESTYLE'
+            BodyLabel:
+                text: 'BEAUTY STUDIO'
 
-        BodyLabel:
-            text: 'Насладись каждым мгновением с нами!'
-            size_hint_y: 0.2
+        # Карточка салона
+        SalonCard:
+            #size_hint_y: 0.3
+            size_hint_y: None  # Установите size_hint_y в None
+            height: self.parent.height * 0.3
+            width: self.parent.width
 
-        ColoredButton:
-            text: 'Наши услуги'
-            size_hint: 0.8, None
-            height: app.styles.BUTTON_HEIGHT
-            pos_hint: {'center_x': 0.5}
-            on_press: root.manager.current = 'services'
+            BoxLayout:
+                size_hint_y: 0.4
+                Label:
+                    text: 'ELTRENDY Московский пр. 151'
+                    bold: True
+                    font_size: '16sp'
+                    color: app.styles.DARK_TEXT
+            BoxLayout:
+                size_hint_y: 0.3
+                Label:
+                    text: 'Московский проспект, 151'
+                    font_size: '14sp'
+                    color: app.styles.DARK_TEXT
+            BoxLayout:
+                size_hint_y: 0.3
+                spacing: 10
+                ColoredButton:
+                    text: 'Выбрать салон'
+                    size_hint_x: 0.7
+                    on_release: root.dropdown.open(self)
+                ColoredButton:
+                    text: '▼'
+                    size_hint_x: 0.3
+                    on_release: root.dropdown.open(self)
+
+        # Специальное предложение
+        SpecialOfferCard:
+            text: 'SPECIAL OFFER: -15% на знакомство с лэшмейкером Кирой Балевой'
+            size_hint_y: 0.15
+
+        # Кнопки действий
+        GridLayout:
+            cols: 2
+            spacing: 15
+            padding: [0, 20, 0, 0]
+            size_hint_y: 0.4
+            ActionButton:
+                text: 'Выбрать специалиста'
+                icon: 'assets/icons/master.png'
+                on_press: root.manager.current = 'master'
+            ActionButton:
+                text: 'Выбрать дату и время'
+                icon: 'assets/icons/calendar.png'
+            ActionButton:
+                text: 'Выбрать услуги'
+                icon: 'assets/icons/services.png'
+                on_press: root.manager.current = 'services'
+            ActionButton:
+                text: 'Акции'
+                icon: 'assets/icons/discount.png'
+
+        # Футер
+        FooterLabel:
+            text: 'Работает на [✔] '
+            size_hint_y: 0.1

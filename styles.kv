@@ -6,18 +6,108 @@
     font_size: '16sp'
     size_hint_y: None
     height: app.styles.BUTTON_HEIGHT
+    bold: True
+    canvas.before:
+        Color:
+            rgba: app.styles.PRIMARY_DARK if self.state == 'down' else app.styles.PRIMARY
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [app.styles.CARD_RADIUS,]
     canvas.after:
         Color:
-            rgba: app.styles.WHITE if self.state == 'normal' else app.styles.LIGHT_PURPLE
+            rgba: app.styles.WHITE
         Line:
             width: 1
-            rectangle: (self.x, self.y, self.width, self.height)
+            rounded_rectangle: [self.x, self.y, self.width, self.height, app.styles.CARD_RADIUS]
 
 <TitleLabel@Label>:
     color: app.styles.PRIMARY
     font_size: app.styles.TITLE_SIZE
     bold: True
+    text_size: self.size
+    halign: 'center'
+    valign: 'middle'
 
 <BodyLabel@Label>:
     color: app.styles.DARK_TEXT
     font_size: app.styles.SUBTITLE_SIZE
+    text_size: self.size
+    halign: 'center'
+    valign: 'middle'
+
+<SalonCard@BoxLayout>:
+    orientation: 'vertical'
+    padding: 0
+    spacing: 10
+    canvas.before:
+        Color:
+            rgba: app.styles.CARD_BACKGROUND
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [app.styles.CARD_RADIUS,]
+    canvas.after:
+        Color:
+            rgba: app.styles.PRIMARY
+        Line:
+            width: 1
+            rounded_rectangle: [self.x, self.y, self.width, self.height, app.styles.CARD_RADIUS]
+
+<SpecialOfferCard@BoxLayout>:
+    text: ''
+    orientation: 'vertical'
+    padding: 10
+    canvas.before:
+        Color:
+            rgba: app.styles.ACCENT_COLOR
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [app.styles.CARD_RADIUS,]
+    Label:
+        text: root.text
+        color: app.styles.WHITE
+        bold: True
+        font_size: '14sp'
+        text_size: self.width, None
+        halign: 'center'
+        valign: 'middle'
+
+<ActionButton@Button>:
+    icon: ''
+    background_normal: ''
+    background_color: [0,0,0,0]
+    color: app.styles.WHITE
+    font_size: '14sp'
+    bold: True
+    canvas.before:
+        Color:
+            rgba: app.styles.PRIMARY if self.state == 'normal' else app.styles.PRIMARY_DARK
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [app.styles.CARD_RADIUS,]
+    BoxLayout:
+        padding: 10
+        size: self.parent.size
+        pos: self.parent.pos
+        Image:
+            source: root.icon
+            size_hint: None, None
+            size: 30, 30
+            pos_hint: {'center_y': 0.5}
+        Label:
+            text: root.text
+            color: app.styles.WHITE
+            size_hint_x: 0.7
+            text_size: self.width, None
+            halign: 'left'
+            valign: 'middle'
+
+<FooterLabel@Label>:
+    color: app.styles.DARK_TEXT
+    font_size: '12sp'
+    text_size: self.size
+    halign: 'center'
+    valign: 'middle'
