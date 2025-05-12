@@ -1,7 +1,7 @@
 # screens/home.kv
 <HomeScreen>:
-    AsyncImage:
-        source: 'https://ania.cleverlive.pro/VogueStyle_application/background_drops.jpg'
+    Image:
+        source: 'assets/images/background_blueWater.jpg'
         allow_stretch: True
         keep_ratio: False
         size: root.size
@@ -9,7 +9,7 @@
 
     BoxLayout:
         orientation: 'vertical'
-        padding: [20, 40, 20, 20]
+        padding: [0, 40, 0, 0]
         spacing: 20
 
         # Заголовок
@@ -19,8 +19,10 @@
             spacing: 5
             TitleLabel:
                 text: 'VOGUESTYLE'
+                color: app.styles.WHITE
             BodyLabel:
                 text: 'BEAUTY STUDIO'
+                color: app.styles.WHITE
 
         # Карточка салона
         SalonCard:
@@ -28,59 +30,44 @@
             size_hint_y: None  # Установите size_hint_y в None
             height: self.parent.height * 0.3
             width: self.parent.width
+            size_hint_x: 1
 
-            BoxLayout:
+            # Выпадающий список
+            Spinner:
+                id: salon_spinner
+                size_hint_y: None
+                height: 50
+                text: root.selected_salon  # Привязываем к выбранному салону
+                values: [salon['name'] for salon in root.salon_data]
+                on_text: root.on_salon_select(self.text)  # Обработчик события выбора
+                sync_height: True
+
+            # Кнопки действий
+            GridLayout:
+                cols: 1  # Изменить на 1, чтобы кнопки были в одном столбце
+                spacing: 15
+                padding: [0, 20, 0, 0]
                 size_hint_y: 0.4
-                Label:
-                    text: 'ELTRENDY Московский пр. 151'
-                    bold: True
-                    font_size: '16sp'
-                    color: app.styles.DARK_TEXT
-            BoxLayout:
-                size_hint_y: 0.3
-                Label:
-                    text: 'Московский проспект, 151'
-                    font_size: '14sp'
-                    color: app.styles.DARK_TEXT
-            BoxLayout:
-                size_hint_y: 0.3
-                spacing: 10
-                ColoredButton:
-                    text: 'Выбрать салон'
-                    size_hint_x: 0.7
-                    on_release: root.dropdown.open(self)
-                ColoredButton:
-                    text: '▼'
-                    size_hint_x: 0.3
-                    on_release: root.dropdown.open(self)
 
-        # Специальное предложение
-        SpecialOfferCard:
-            text: 'SPECIAL OFFER: -15% на знакомство с лэшмейкером Кирой Балевой'
-            size_hint_y: 0.15
+                ActionButton:
+                    text: 'Выбрать специалиста'
+                    icon: 'assets/icons/master.png'  # Укажите путь к изображению
+                    on_press: root.manager.current = 'master'
 
-        # Кнопки действий
-        GridLayout:
-            cols: 2
-            spacing: 15
-            padding: [0, 20, 0, 0]
-            size_hint_y: 0.4
-            ActionButton:
-                text: 'Выбрать специалиста'
-                icon: 'assets/icons/master.png'
-                on_press: root.manager.current = 'master'
-            ActionButton:
-                text: 'Выбрать дату и время'
-                icon: 'assets/icons/calendar.png'
-            ActionButton:
-                text: 'Выбрать услуги'
-                icon: 'assets/icons/services.png'
-                on_press: root.manager.current = 'services'
-            ActionButton:
-                text: 'Акции'
-                icon: 'assets/icons/discount.png'
+                ActionButton:
+                    text: 'Выбрать дату и время'
+                    icon: 'assets/icons/calendar.png'  # Укажите путь к изображению
+                    on_press: root.manager.current = 'date_time'
 
-        # Футер
-        FooterLabel:
-            text: 'Работает на [✔] '
-            size_hint_y: 0.1
+                ActionButton:
+                    text: 'Выбрать услуги'
+                    icon: 'assets/icons/services.png'  # Укажите путь к изображению
+                    on_press: root.manager.current = 'services'
+
+
+
+
+
+
+
+

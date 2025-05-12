@@ -1,0 +1,26 @@
+<SplashScreen>:
+    Image:
+        source: 'assets/images/background_blueWater.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        size: root.size
+        pos: root.pos
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+
+        # Крутилка
+        AsyncImage:
+            source: 'assets/images/spinner.gif'
+            size_hint: None, None
+            size: 100, 100
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        # Лейбл
+        Label:
+            text: 'Загрузка...'
+            size_hint: None, None
+            size: 200, 50
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
