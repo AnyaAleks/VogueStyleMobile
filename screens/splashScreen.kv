@@ -10,6 +10,20 @@
         orientation: 'vertical'
         padding: 50
         spacing: 20
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        size_hint: None, None
+        size: self.minimum_size
+
+        # Приветственная надпись
+        Label:
+            text: 'Добро пожаловать!'
+            size_hint: None, None
+            size: 300, 50
+            padding: [20, 0, 0, 0]
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            font_size: '32sp'
+            bold: True
+            color: 1, 1, 1, 1
 
         # Крутилка
         AsyncImage:
