@@ -36,23 +36,32 @@
     halign: 'center'
     valign: 'middle'
 
+<CustomSpinnerOption@Button>:
+    background_color: (0.9, 0.9, 0.9, 1)
+    color: (0, 0, 0, 1)
+    size_hint_y: None
+    height: 40
+    on_release: app.root.get_screen('home').selected_salon = self.text
+
 <SalonCard@BoxLayout>:
     orientation: 'vertical'
     padding: 0
     spacing: 10
+    size_hint_x: 1
+    width: self.parent.width if self.parent else 0
     canvas.before:
         Color:
-            rgba: app.styles.CARD_BACKGROUND
+            rgba: app.styles.WHITE
         RoundedRectangle:
             pos: self.pos
             size: self.size
-            radius: [app.styles.CARD_RADIUS,]
+            radius: [app.styles.CARD_RADIUS, app.styles.CARD_RADIUS, 0, 0]
     canvas.after:
         Color:
-            rgba: app.styles.PRIMARY
+            rgba: app.styles.WHITE
         Line:
             width: 1
-            rounded_rectangle: [self.x, self.y, self.width, self.height, app.styles.CARD_RADIUS]
+            rounded_rectangle: [self.x, self.y, self.width, self.height, app.styles.CARD_RADIUS, app.styles.CARD_RADIUS, 0, 0]
 
 <SpecialOfferCard@BoxLayout>:
     text: ''
@@ -74,36 +83,43 @@
         halign: 'center'
         valign: 'middle'
 
-<ActionButton@Button>:
+<ActionButtonList@Button>:
     icon: ''
     background_normal: ''
-    background_color: [0,0,0,0]
+    background_color: [0, 0, 0, 0]
     color: app.styles.WHITE
     font_size: '14sp'
     bold: True
+    size_hint_y: None
+    height: 60
+    width: self.parent.width
     canvas.before:
         Color:
-            rgba: app.styles.PRIMARY if self.state == 'normal' else app.styles.PRIMARY_DARK
+            rgba: app.styles.PRIMARY if self.state == 'normal' else app.styles.WHITE
         RoundedRectangle:
             pos: self.pos
             size: self.size
             radius: [app.styles.CARD_RADIUS,]
-    BoxLayout:
-        padding: 10
-        size: self.parent.size
-        pos: self.parent.pos
-        Image:
-            source: root.icon
-            size_hint: None, None
-            size: 30, 30
-            pos_hint: {'center_y': 0.5}
-        Label:
-            text: root.text
-            color: app.styles.WHITE
-            size_hint_x: 0.7
-            text_size: self.width, None
-            halign: 'left'
-            valign: 'middle'
+
+<ActionButtonBack@Button>:
+    icon: ''
+    background_normal: ''
+    background_color: [0, 0, 0, 0]
+    color: app.styles.WHITE
+    font_size: '14sp'
+    bold: True
+    size_hint_y: None
+    height: 60
+    size_hint_x: 0.5
+    pos_hint: {"center_x": 0.5, "center_y": 0.5}  # Центрирование по родителю
+    canvas.before:
+        Color:
+            rgba: app.styles.PRIMARY if self.state == 'normal' else app.styles.WHITE
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [app.styles.CARD_RADIUS,]
+
 
 <FooterLabel@Label>:
     color: app.styles.DARK_TEXT

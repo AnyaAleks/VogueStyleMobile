@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07d85e7b-470e-4c01-a056-d00b5d796a0c" name="Changes" comment="SplashScreen - черновик">
-      <change afterPath="$PROJECT_DIR$/assets/images/man.png" afterDir="false" />
+    <list default="true" id="07d85e7b-470e-4c01-a056-d00b5d796a0c" name="Changes" comment="Страница со списком услуг">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/home.kv" beforeDir="false" afterPath="$PROJECT_DIR$/screens/home.kv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.kv" beforeDir="false" afterPath="$PROJECT_DIR$/styles.kv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +142,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747057626402</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Главный экран - подготовка к списку сервисов">
+      <option name="closed" value="true" />
+      <created>1747065193371</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747065193371</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Страница со списком услуг">
+      <option name="closed" value="true" />
+      <created>1747070976897</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747070976897</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -152,6 +166,8 @@
     <MESSAGE value="*" />
     <MESSAGE value="*\\Новая верстка для home.kv" />
     <MESSAGE value="SplashScreen - черновик" />
-    <option name="LAST_COMMIT_MESSAGE" value="SplashScreen - черновик" />
+    <MESSAGE value="Главный экран - подготовка к списку сервисов" />
+    <MESSAGE value="Страница со списком услуг" />
+    <option name="LAST_COMMIT_MESSAGE" value="Страница со списком услуг" />
   </component>
 </project>
