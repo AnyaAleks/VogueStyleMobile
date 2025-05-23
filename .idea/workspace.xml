@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07d85e7b-470e-4c01-a056-d00b5d796a0c" name="Changes" comment="SplashScreen was changed a little bit">
+    <list default="true" id="07d85e7b-470e-4c01-a056-d00b5d796a0c" name="Changes" comment="Сборка apk">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildozer.spec" beforeDir="false" afterPath="$PROJECT_DIR$/buildozer.spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildozer.spec" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747136772329</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Сборка apk">
+      <option name="closed" value="true" />
+      <created>1747994278491</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747994278491</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -186,6 +194,7 @@
     <MESSAGE value="Главный экран - подготовка к списку сервисов" />
     <MESSAGE value="Страница со списком услуг" />
     <MESSAGE value="SplashScreen was changed a little bit" />
-    <option name="LAST_COMMIT_MESSAGE" value="SplashScreen was changed a little bit" />
+    <MESSAGE value="Сборка apk" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сборка apk" />
   </component>
 </project>
